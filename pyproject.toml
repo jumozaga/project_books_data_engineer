@@ -12,6 +12,9 @@ pymongo = "^4.3.3"
 requests = "^2.28.2"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
