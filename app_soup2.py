@@ -36,7 +36,7 @@ for n in range(1,51):
             # Encontra a categoria do livro
             print("Procurando categoria")           
             # categoria = livro.select('a')[0]['href'].split('/')[1]
-            categoria =livro.h3.a['href'].split('/')[0]
+            categoria =livro.h3.a['href'].split('/')[-2]
 
 
             # Encontra a avaliação do livro em estrelas
@@ -61,14 +61,13 @@ for n in range(1,51):
             }
             print("Dicionario criado")
             
-            print("Criando CSV")
-            with open('livros.csv', 'a') as f:
+            print("Criando CSV em UTF-8")
+            with open('livros.csv', 'a', encoding='utf-8') as f:
                   f.write(f'{titulo},{categoria},{estrelas},{preco},{estoque} \n')
-            print("CSV criado")
-      
+            print("CSV criado")     
             
 
             # Insere o livro no banco de dados MongoDB
-            print("Indo lá no BD, me deseja boa sorte hehe")
-            db.livros.insert_one(livro_data)
-            print("Inserido no BD")
+            # print("Indo lá no BD, me deseja boa sorte hehe")
+            # db.livros.insert_one(livro_data)
+            # print("Inserido no BD")
