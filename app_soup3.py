@@ -53,7 +53,8 @@ for categoria in categorias:
 
         for livro in livros:
 
-            titulo = livro.select_one("h3 a").text
+            # titulo = livro.select_one("h3 a").text
+            titulo = livro.h3.a['title']
 
             preco = livro.select_one(".price_color").text
 
