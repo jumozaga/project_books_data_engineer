@@ -12,6 +12,7 @@ pymongo = "^4.3.3"
 requests = "^2.28.2"
 python-dotenv = "^1.0.0"
 pandas = "^2.0.0"
+sweetviz = "^2.1.4"
 
 
 [tool.poetry.group.dev.dependencies]
