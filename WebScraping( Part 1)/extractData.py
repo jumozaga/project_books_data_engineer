@@ -55,7 +55,7 @@ for categoria in categorias:
 
         for livro in livros:
             # titulo = livro.select_one("h3 a").text
-            titulo = livro.h3.a["title"].replace(',', '.').strip()
+            titulo = livro.h3.a["title"].replace(",", ".").strip()
 
             preco = livro.select_one(".price_color").text.strip()
             # preco = livro.select("p")[1].text.strip()
@@ -76,7 +76,7 @@ for categoria in categorias:
             }
 
             # Insere o livro no arquivo CSV
-            with open("livros3.csv", "a", encoding="utf-8") as f:
+            with open("livros.csv", "a", encoding="utf-8") as f:
                 f.write(
                     f"{titulo},{categoria_nome},{estrelas},\
                         {preco},{estoque} \n"
