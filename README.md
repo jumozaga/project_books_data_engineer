@@ -1,4 +1,4 @@
-## Meu primeiro webscraping- Part 1 de um projeto de aprendizagem Eng de dados
+## Meu primeiro webscraping- Part 1 de uma proposta para aprendizagem em Eng de dados
 
 ### Ferramentas:
 + Beautifulsoup4 / Python
