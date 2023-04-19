@@ -4,6 +4,7 @@
 + Beautifulsoup4 / Python
 + MongoDB
 + http://books.toscrape.com/index.html
++ SweetViz
 
 ### Ideia
 + Coletar dados do site para um futuro sistema de recomendação da empresa ficticia BOOKS
