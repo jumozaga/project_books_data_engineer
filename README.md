@@ -11,4 +11,5 @@
 + Livro: Titulo, Preco, Estrelas, Categoria, Estoque
 + Salvar os dados coletados em Banco de dados(MongoDB)
 + Disponibilizar em arquivo(CSV)
++ Airflow
 
