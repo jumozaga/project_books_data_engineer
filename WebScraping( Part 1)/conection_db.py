@@ -5,6 +5,7 @@ from pymongo import MongoClient
 # port="27017"
 # db_name="livros3"
 
+
 def conect_db(con, host, port, db_name):
     """_Resumo da função_
 
@@ -19,7 +20,7 @@ def conect_db(con, host, port, db_name):
     Returns:
         _db=client[db_name]_
     """
-    
+
     client = MongoClient(f"{con}://{host}:{port}")
     print(client)
     db = client[f"{db_name}"]
