@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bsscrapy"
+name = "booksvenv"
 version = "0.1.0"
 description = ""
 authors = ["jumozaga <jumozaga@yahoo.com>"]
