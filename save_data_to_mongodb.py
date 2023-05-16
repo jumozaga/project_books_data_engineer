@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from conection_db import conect_db
+from conection_db import conect_mongodb as conect_db
 from scraping_data import scraping
 
 
