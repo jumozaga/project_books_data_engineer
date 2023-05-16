@@ -47,9 +47,7 @@ try:
             conn.commit()
 
             # Obter o ID da Dimensão Categoria
-            cursor.execute(
-                """SELECT id_categoria FROM tb_dim_categoria 
-                WHERE categoria = %s""", (categoria,))
+            cursor.execute("""SELECT id_categoria FROM tb_dim_categoria WHERE categoria = %s""", (categoria,))
             id_categoria = cursor.fetchone()[0]
 
             # Construir o objeto livro
@@ -79,6 +77,6 @@ try:
             conn.commit()
 
     print("Dados inseridos com sucesso!")
-
-except:
-    print("Erro ao inserir os dados!")
+except Exception as e:
+    print("Ocorreu um erro ao inserir os dados!")
+    print(e)

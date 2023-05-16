@@ -32,8 +32,8 @@ password = os.environ.get("password")
 
 def conect_postgres(db=db, user=user, password=password):
 
-    conn = psycopg.connect(
+    return psycopg.connect(
         f"dbname={db} user={user} password={password}"
     )
 
-    return conn
+

@@ -25,7 +25,7 @@ def create_tables():
             cur.execute('''
                 CREATE TABLE IF NOT EXISTS tb_dim_estoque(
                     id_estoque SERIAL PRIMARY KEY,
-                    estoque INT 
+                    estoque VarChar(50) 
                 )
             ''')
 
@@ -43,7 +43,7 @@ def create_tables():
                     id_livro SERIAL PRIMARY KEY,
                     titulo VARCHAR(100),
                     preco NUMERIC(10, 2),
-                    estrelas INT,
+                    estrelas varchar(20),
                     fk_dim_categoria INT REFERENCES tb_dim_categoria(id_categoria),
                     fk_dim_estoque INT REFERENCES tb_dim_estoque(id_estoque)
                 )
@@ -75,3 +75,7 @@ def create_tables():
                 conn.close()
 
     return conn
+
+
+
+create_tables()
