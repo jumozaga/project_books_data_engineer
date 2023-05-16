@@ -1,16 +1,15 @@
 import psycopg
-import os
-from dotenv import load_dotenv
 from conection_db import conect_postgres
 
-load_dotenv()
 
-host2 = os.environ.get("host")
-db = os.environ.get("db")
-user = os.environ.get("user")
-password = os.environ.get("password")
+conn = conect_postgres()
 
-with conect_postgres(db, user, password) as conn:
+
+def create_tables():
+    """
+    Cria as tabelas no banco de dados
+    :return: None
+    """
     with conn.cursor() as cur:
         # Criação das tabelas
         try:
@@ -73,3 +72,5 @@ with conect_postgres(db, user, password) as conn:
         finally:
             if conn is not None:
                 conn.close()
+
+    return conn
