@@ -14,12 +14,10 @@ def conect_mongodb(con, host, port, db_name):
 # conect_db(con, host, port, db_name)
 
 
-def conect_postgres(host2, db, user, password):
+def conect_postgres(db, user, password):
 
     conn = psycopg.connect(
-        host=f"{host2}",
-        dbname=f"{db}",
-        user=f"{user}",
-        password=f"{password}"
+        f"dbname={db} user={user} password={password}"
     )
+
     return conn

@@ -10,7 +10,7 @@ db = os.environ.get("db")
 user = os.environ.get("user")
 password = os.environ.get("password")
 
-with psycopg.connect(f"dbname={db} user={user} password={password}") as conn:
+with conect_postgres(db, user, password) as conn:
     with conn.cursor() as cur:
         # Criação das tabelas
         try:
