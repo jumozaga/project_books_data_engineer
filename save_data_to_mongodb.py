@@ -6,13 +6,7 @@ from scraping_data import scraping
 
 def save_mongo():
 
-    load_dotenv()
-
-    con = os.getenv("CONEXAO")
-    host = os.getenv("HOST")
-    port = os.getenv("PORT")
-    db_name = os.getenv("DATABASE")
-    db = conect_db(con, host, port, db_name)
+    db = conect_db()
 
     livros_data = scraping()
 

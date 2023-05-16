@@ -58,7 +58,8 @@ df2.loc[df.Em_estoque.str.strip() != 'In stock', 'Em_estoque'] = 'NÃO'
 
 # COLOCANDO AS PALAVRAS EM PORTUGUÊS
 df2['Classificacao'] = df2['Classificacao'].replace(
-    {'One': 'Um', 'Two': 'Dois', 'Three': 'Três', 'Four': 'Quatro', 'Five': 'Cinco'})
+    {'One': 'Um', 'Two': 'Dois', 'Three': 'Três', 
+     'Four': 'Quatro', 'Five': 'Cinco'})
 df2['Categoria'] = df2['Categoria'].replace({'Travel': 'Viagem', 'Politics': 'Politica',
                                              'Mystery': 'Mistério', 'Historical Fiction': 'Historico Ficção',
                                              'Sequential Art': 'Arte', 'Fiction': 'Ficção',
@@ -90,22 +91,27 @@ df3 = pd.DataFrame([livro_max_preco, livro_min_preco])
 
 # Ordenados pelo preço
 ordenada_preco = df2.sort_values('Preco', ascending=False)
+
 # Ordenados pela Classificacao/Avaliação
 ordenada_classificacao = df2.sort_values('Classificacao', ascending=True)
+
 # Os 5 mais bem classificados
 classificacao_geral = ordenada_classificacao.head(
     196)[['Titulo', 'Categoria', 'Classificacao']]
 
 # Os 5 mais bem classificados por categoria
 top_5 = ordenada_classificacao.groupby('Categoria').apply(lambda x: x.head(5))
+
 # Os 5 mais baratos por categoria
 top5_p = ordenada_preco.groupby('Categoria').apply(lambda x: x.tail(5))
 
 # Gráfico de barras mostrando a quantidade de livros em cada categoria
 # Criar um dicionário contendo a contagem de livros em cada categoria
 count_by_category = df2.groupby('Categoria')['Titulo'].count().to_dict()
+
 # Criar o gráfico de barras
 plt.bar(range(len(count_by_category)), count_by_category.values())
+
 # Definir as etiquetas dos eixos
 plt.xticks(range(len(count_by_category)),
            count_by_category.keys(), rotation=90)
@@ -141,13 +147,14 @@ ax.set_title('Título mais barato e mais caro de cada categoria')
 ax.legend()
 plt.show()
 
-sv.analyze(df2).show_html('base.html')
-sv.analyze(df3).show_html('df3.html')
-sv.analyze(ordenada_preco).show_html('ordenada_preco.html')
-sv.analyze(ordenada_classificacao).show_html('ordenada_classificacao .html')
-sv.analyze(classificacao_geral).show_html('classificacao_geral.html')
-sv.analyze(top_5).show_html('top_5.html')
-sv.analyze(top5_p).show_html('top5_p.html')
+
+# sv.analyze(df2).show_html('base.html')
+# sv.analyze(df3).show_html('df3.html')
+# sv.analyze(ordenada_preco).show_html('ordenada_preco.html')
+# sv.analyze(ordenada_classificacao).show_html('ordenada_classificacao .html')
+# sv.analyze(classificacao_geral).show_html('classificacao_geral.html')
+# sv.analyze(top_5).show_html('top_5.html')
+# sv.analyze(top5_p).show_html('top5_p.html')
 
 
 # filtros = {'5 Melhores Avaliados Por categoria': top_5, 'Top 5 por Preço mais baratos':top5_p, "Mais barato":livro_min_preco, "Mais caro":livro_max_preco,

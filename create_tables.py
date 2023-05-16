@@ -67,7 +67,8 @@ def create_tables():
             print("Tabelas criadas com sucesso!")
 
         except BaseException:
-            conn.rollback()
+            print("Erro ao criar as tabelas")
+            conn.rollback()           
 
         finally:
             if conn is not None:
