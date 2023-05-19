@@ -8,7 +8,7 @@ A Book Club é uma Startup de troca de livros. O modelo de negócio funciona com
 #### <img src="./Pipeline.png" width="5000" height="500" >
 + Coletar dados no site para um futuro sistema de recomendação da empresa ficticia BOOKS CLUB, por webscraping.
 + Dados Extraídos -> Livro: Titulo, Preco, Estrelas, Categoria, Estoque (Em moeda estrangeira e idioma estrangeiro)
-+ Disponibilizar dado bruto em arquivo(CSV) 
++ Disponibilizar dado bruto em arquivo(CSV) (Adendo: No MongoDB)
 + Tratar os dados
 + Criar Datawarehouse (Modelagem Dimensional e Postgres)
 + Salvar dados limpos em csv e enviar para o Datawarehouse
