@@ -14,7 +14,7 @@ A Book Club é uma Startup de troca de livros. O modelo de negócio funciona com
 + Criar Datawarehouse (Modelagem Dimensional e Postgres)
 + <img src="./Modelagem Dimensional.png" width="5000" height="500" >
 + Salvar dados limpos em csv e enviar para o Datawarehouse
-+ <img src="./Tabelas_Criadas.png" width="5000" height="500" >
++ <img src="./ERD.png" width="5000" height="500" >
 + Automatizar tarefa com airflow
 
 ### Ferramentas:
