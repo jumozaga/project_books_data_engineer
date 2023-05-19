@@ -31,8 +31,8 @@ A Book Club é uma Startup de troca de livros. O modelo de negócio funciona com
 
 + Dado limpo no Postgres
 +  <img src="./QuerySelectLivroComPrecoMenor.png" width="5000" height="500">
-+ <img src="./TabelaDimCategoria.png width="5000" height="500"" >
-+ <img src="./TabelaDimEstoque.png width="5000" height="500"" >
++ <img src="./TabelaDimCategoria.png" width="5000" height="500" >
++ <img src="./TabelaDimEstoque.png" width="5000" height="500" >
 
 
 
