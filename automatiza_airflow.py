@@ -2,9 +2,10 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
 from save_raw_data_to_csv import save_csv
-# from save_data_to_mongodb import save_mongo
+from save_data_to_mongodb import save_mongo
 from create_tables import create_tables
-from save_transformed_data_to_csv import transform_data
+from save_transformed_data_to_csv import save_transformed_data_to_csv
+import send_to_dw
 
 default_args = {
     'owner': 'airflow',
@@ -31,21 +32,22 @@ createtable = PythonOperator(
 
 save_cleaned_data_csv = PythonOperator(
     task_id='Save_to_CSV_Cleaned',
-    python_callable=transform_data,
+    python_callable=save_transformed_data_to_csv,
     dag=dag
 )
 
 save_on_dw = PythonOperator(
-    task_id='Save_to_CSV_Cleaned',
-    python_callable=create_tables,
+    task_id='Save_to_DataWarehouse',
+    python_callable=send_to_dw,
     dag=dag
 )
 
-# mongodb= PythonOperator(
-#     task_id='Save_raw_to_mongodb',
-#     python_callable=save_mongo,
-#     dag=dag
-# )
+mongodb = PythonOperator(
+    task_id='Save_raw_to_mongodb',
+    python_callable=save_mongo,
+    dag=dag
+)
 
 # Pipeline of tasks
-extract_to_file >> createtable >> save_cleaned_data_csv >> save_on_dw
+
+extract_to_file >> mongodb >> createtable >> save_cleaned_data_csv >> save_on_dw
